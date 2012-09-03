@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+%html
+  %head
+    %title
+    %meta{'name':'description', 'content':'text/html', 'charset':'utf-8'}
+    %link{'rel':'stylesheet', 'href':'={ STATIC_URL }bootstrap/css/bootstrap.css'}
+    %script{'src':'={ STATIC_URL }bootstrap/js/bootstrap.min.js'}
+    %script{'src':'={ STATIC_URL }js/jquery-1.7.1.min.js'}
+
+  %body{'data-spy':'scroll', 'data-target':'.subnav', 'data-offset':'50'}
+
+      - block nav
+        - include 'nav.haml'
+      - block content
+      - block footer
+        -#- include 'footer.haml'
+

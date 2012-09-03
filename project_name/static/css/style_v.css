@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body.center {
+    color: #000;
+    font-size: 14px;
+    width:860px;
+    margin:0 auto;
+    background-color:#f5f5dc;
+}
+
+#container {
+    width: 860px;
+    margin:0 auto;
+}
+.item {
+    width: 834px;
+    margin: 10px 0px 5px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #b4bbcd;
+    min-height: 40px;
+    text-align: justify;
+    word-wrap: break-word;
+}
+.inner {
+    padding: 0px 5px;
+}
+/*timeline navigatior css*/
+.timeline_container {
+    width: 16px;
+    text-align: center;
+    float:right;
+    cursor: pointer;
+    display: block;
+}
+.aa{
+    float:left;
+}
+.timeline{
+    background-color: #e08989;
+    display: block;
+
+    height: 100%;
+
+    margin-top: 10px;
+    position: absolute;
+    width: 4px;
+}
+.timeline:hover{
+    cursor: pointer;
+
+}
+.timeline div.plus{
+    width: 14px;
+    height: 14px;
+    position:relative;
+    left: -6px;
+}
+
+.rightCorner {
+    background-image: url("../img/right.png");
+    display: block;
+    height: 15px;
+    margin-left: 834px;
+    margin-top: 8px;
+    padding: 0;
+    vertical-align: top;
+    width: 13px;
+    z-index: 2;
+    position: absolute;
+}
+
+.deletebox {
+    color: #CC0000;
+    float: right;
+    font-weight: bold;
+    margin:0px 10px;
+    text-decoration: none;
+}
+/*popup*/
+#popup {
+    display: block;
+    width: 834px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #a9b6d2;
+    min-height: 40px;
+    display: none;
+    position: absolute;
+  
+}
+textarea#update {
+ 
+    resize: none;
+    min-height: 40px;
+    width:500px;
+}
+span.time{float:right;}
+.rightTime{
+      display: block;
+    margin-left: 850px;
+margin-top:-50px;
+    padding: 0;
+    z-index: 2;
+    position: absolute;
+}
+
+
