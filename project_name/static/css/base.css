@@ -1,0 +1,15 @@
+body {
+    padding-top: 50px;
+    position: relative;
+
+}
+
+.errorlist {
+    color: red;
+}
+
+.loading {
+  margin-top: 20%;
+  margin-left: 35%;
+  position: fixed;
+}

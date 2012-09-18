@@ -23,11 +23,17 @@ DATABASES = {
     }
 }
 
-TIME_ZONE = 'America/Chicago'
-LANGUAGE_CODE = 'en-us'
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS':False,
+}
+
+# Datetime
+TIME_ZONE = 'Asia/Shanghai'
+LANGUAGE_CODE = 'zh_CN'
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
+LOCALE_PATHS = (os.path.join(CURRENT_PATH, '../locale'),)
 USE_TZ = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
@@ -40,13 +46,14 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'sass --scss {infile} {outfile}'),
 )
 STATIC_URL = '/static/'
-LOGIN_URL = '/accounts/login'
-LOGIN_REDIRECT_URL = '/task'
+LOGIN_URL = '/account/login'
+LOGIN_REDIRECT_URL = '/tasking/task/index'
 INTERNAL_IPS = ('127.0.0.1')
 
 STATICFILES_DIRS = (
     os.path.join(CURRENT_PATH, 'static'),
 )
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -90,15 +97,26 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
 
     # external
+    'south',
     'django_extensions',
     'debug_toolbar',
     'compressor',
-    'tagging',
+    'taggit',
+    'django_tables2',
+    #'bootstrap',
 
     # project
 )
+
+CACHES = {
+    'default':{
+        'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION':'/tmp/django_cache',
+        }
+    }
 
 LOGGING = {
     'version': 1,

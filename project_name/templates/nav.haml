@@ -1,0 +1,51 @@
+- load url from future
+- load i18n
+
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".subnav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      %a.brand{'href':"#"}
+        Title
+      .nav-collapse.subnav-collapse
+        %ul.nav
+          -#apps
+          -#tasking
+          %li.active
+            %a{'href':"{% url 'tasking_task_index' %}"}
+              {% trans 'tasking' %}
+
+          -#loggit
+          %li.active
+            %a{'href':"{% url 'loggit_newdomain_index' %}"}
+              {% trans 'loggit' %}
+
+        -#account
+        %ul.nav.pull-right
+          %li.divider-vertical
+          - if user.username
+            %li.dropdown
+              %a.dropdown-toggle{'href':"#", 'data-toggle':"dropdown"}
+                = user
+                %b.caret
+              %ul.dropdown-menu
+                - if perms.auth
+                  %li
+                    %a{'href':"{% url 'account_index' %}"}
+                      {% trans 'account management' %}
+                %li
+                  %a{'href':"{% url 'profile_update' %}"}
+                    {% trans 'account setting' %}
+                %li.divider
+                %li
+                  %a{'href':"{% url 'account_logout' %}"}
+                    {% trans 'logout' %}
+            - else
+              %li
+                %a{'href':"{% url 'account_login' %}"}
+                  {% trans 'login' %}
+
