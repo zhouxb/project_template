@@ -1,4 +1,4 @@
-/*base*/
+#base
 django==1.4.1
 mysql-python==1.2.3
 south
@@ -10,8 +10,8 @@ django-tables2
 simplejson==2.6.1
 django-appconf
 
-/*tasking*/
+#tasking
 django-taggit==0.9.3
 
-/*loggit*/
+#loggit
 mongoengine==0.7.3

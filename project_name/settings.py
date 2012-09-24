@@ -23,9 +23,7 @@ DATABASES = {
     }
 }
 
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS':False,
-}
+
 
 # Datetime
 TIME_ZONE = 'Asia/Shanghai'
@@ -37,7 +35,7 @@ LOCALE_PATHS = (os.path.join(CURRENT_PATH, '../locale'),)
 USE_TZ = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-STATIC_ROOT = '/tmp'
+STATIC_ROOT = os.path.join(CURRENT_PATH, 'static_product')
 COMPRESS_ENABLED = True
 COMPRESS_PRECOMPILERS = (
     ('text/coffeescript', 'coffee --compile --stdio'),
@@ -77,7 +75,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -102,11 +100,9 @@ INSTALLED_APPS = (
     # external
     'south',
     'django_extensions',
-    'debug_toolbar',
     'compressor',
     'taggit',
     'django_tables2',
-    #'bootstrap',
 
     # project
 )
@@ -141,3 +137,23 @@ LOGGING = {
         },
     }
 }
+
+if DEBUG:
+    INSTALLED_APPS += (
+        # external
+        'debug_toolbar',
+    )
+
+    MIDDLEWARE_CLASSES += (
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    )
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS':False,
+    }
+
+HEROKU = False
+if HEROKU:
+    import dj_database_url
+    DATABASES = {'default':dj_database_url.config(default='postgres://localhost')}
+
