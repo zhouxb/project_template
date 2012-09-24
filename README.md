@@ -1,8 +1,3 @@
-project_template
-================
-
-rapidly create django project
-
 ==============================================
 project template
 ==============================================
