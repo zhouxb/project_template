@@ -1,0 +1,12 @@
+django==1.4.1
+south
+django-annoying==0.7.6
+django-extensions==0.9
+https://github.com/jessemiller/HamlPy/tarball/master
+django-compressor==1.2
+django-tables2
+simplejson==2.6.1
+django-appconf
+django-taggit==0.9.3
+psycopg2
+dj-database-url
