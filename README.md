@@ -30,5 +30,8 @@ HEROKU
 
 pip install -r requirements/heroku.txt
 
+in settings.py HEROKU is set True
+
 https://devcenter.heroku.com/articles/django#listing-and-scaling-dynos
+
 
