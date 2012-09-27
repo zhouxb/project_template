@@ -1,3 +1,4 @@
 $ ->
   paths = window.location.pathname.split('/')
-  $('a[href*=' + paths[2] + ']').parent().addClass('active')
+  path = '\\/' + paths[2] + '\\/'
+  $('a[href*=' + path + ']').parent().addClass('active')
